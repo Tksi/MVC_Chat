@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+body {
+  font-family: 'Kosugi Maru', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+#root {
+  background-color: #f8f8f8;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  max-height: 700px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#js-messages {
+  overflow: auto;
+  height: calc(100% - 2rem);
+  width: 100%;
+}
+#js-form {
+  height: 2rem;
+  width: 100%;
+}
+#js-form-input {
+  border: solid transparent;
+  padding: 0px 0.5em;
+  outline: none;
+  font-size: 1.25rem;
+  height: 100%;
+  width: 100%;
+  background-color: #fcfcfc;
+}
+#js-form-input::placeholder {
+  font-family: 'Kosugi Maru', sans-serif;
+  font-style: italic;
+}
+#js-form-input:focus {
+  /* border: solid #eee; */
+  background-color: #fff;
+}
+#js-form-input:focus::placeholder {
+  color: #aaa;
+}
+.message {
+  font-size: 1.25rem;
+  padding: 0.25em 0.5em;
+  border: dashed #bbb;
+  border-width: 0px 0px 2.5px 0px;
+}
+.message-connect {
+  font-style: italic;
+  font-weight: thin;
+  color: #aaa;
+  border: dashed rgb(124, 190, 154);
+  border-width: 0px 0px 2.5px 0px;
+}
+.message-disconnect {
+  font-style: italic;
+  font-weight: thin;
+  color: #aaa;
+  border: dashed rgb(226, 125, 121);
+  border-width: 0px 0px 2.5px 0px;
+}

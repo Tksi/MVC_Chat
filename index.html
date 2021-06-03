@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC_Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="js-messages">
+        <p class="message">tests a <br />sd</p>
+        <div class="message">tests2</div>
+        <div class="message message-connect">user connect</div>
+        <div class="message">tests2</div>
+        <div class="message">tests2</div>
+        <div class="message message-disconnect">user disconneected</div>
+        <div class="message">tests2</div>
+      </div>
+      <form id="js-form">
+        <input
+          id="js-form-input"
+          class="new-todo"
+          type="text"
+          placeholder="Type message here"
+          autocomplete="off"
+          autofocus
+        />
+      </form>
+    </div>
+    <script>
+      // document.body.style.height = `${window.innerHeight}px`;
+    </script>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
