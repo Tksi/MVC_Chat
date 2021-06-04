@@ -1,7 +1,6 @@
 export const App = class {
-  constructor({ jsForm, jsFormInput, jsMessages, wsURL }) {
+  constructor({ jsForm, jsMessages, wsURL }) {
     this.jsForm = jsForm;
-    this.jsFormInput = jsFormInput;
     this.jsMessages = jsMessages;
     this.ws = new WebSocket(wsURL);
   }
@@ -10,13 +9,13 @@ export const App = class {
   mount() {
     this.jsForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      console.log(1);
-      //TODO: Modelに値を追加する
+      console.log(e.srcElement.input.value);
+      //TODO: MessagaModelに値を追加する
     });
 
     this.ws.addEventListener('message', (message) => {
       console.log(message);
-      //TODO: Modelに値を追加する
+      //TODO: MessageModelに値を追加する
     });
   }
 };
