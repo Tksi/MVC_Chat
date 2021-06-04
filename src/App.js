@@ -18,15 +18,12 @@ export const App = class {
         this.ws.send(JSON.stringify(message));
       }
 
-      //TODO: viewからelement取得する -> Serverからのやつはわけたり
+      // viewからelement取得する
       const messagesElement = this.messageView.createElement(
         this.messageModel.mesagges
       );
 
-      console.log(messagesElement);
-
-      //TODO: 描画する(render);
-      console.log(this.jsMessages);
+      // 描画する
       this.jsMessages.innerHTML = messagesElement;
       this.jsMessages.scroll(0, this.jsMessages.scrollHeight);
     });
