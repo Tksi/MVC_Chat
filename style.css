@@ -93,3 +93,12 @@ body {
   border: dashed rgb(226, 125, 121);
   border-width: 0px 0px 2.5px 0px;
 }
+.message-send {
+  font-style: italic;
+  color: #555;
+}
+
+.message-recieve {
+  border: dashed rgb(178, 204, 224);
+  border-width: 0px 0px 2.5px 0px;
+}

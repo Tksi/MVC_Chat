@@ -1,11 +1,12 @@
 import { MessageModel } from './model/MessageModel.js';
-
+import { MessageView } from './view/MessageView.js';
 export const App = class {
   constructor({ jsForm, jsMessages, wsURL }) {
     this.jsForm = jsForm;
     this.jsMessages = jsMessages;
     this.ws = new WebSocket(wsURL);
     this.messageModel = new MessageModel();
+    this.messageView = new MessageView();
   }
 
   mount() {
@@ -18,9 +19,16 @@ export const App = class {
       }
 
       //TODO: viewからelement取得する -> Serverからのやつはわけたり
-      //new MessageView(this.messageModel.messages).createElement;
+      const messagesElement = this.messageView.createElement(
+        this.messageModel.mesagges
+      );
 
-      //TODO: 描画する(render)
+      console.log(messagesElement);
+
+      //TODO: 描画する(render);
+      console.log(this.jsMessages);
+      this.jsMessages.innerHTML = messagesElement;
+      this.jsMessages.scroll(0, this.jsMessages.scrollHeight);
     });
 
     // ユーザがメッセージを入力したとき
