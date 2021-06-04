@@ -8,8 +8,9 @@ export const App = class {
     this.messageModel = new MessageModel();
   }
 
-  //イベントリスナーの登録
+  // イベントリスナーの登録
   mount() {
+    // ユーザがメッセージを入力したとき
     this.jsForm.addEventListener('submit', (e) => {
       e.preventDefault();
       console.log(e.srcElement.input.value);
@@ -18,6 +19,7 @@ export const App = class {
       e.srcElement.input.value = '';
     });
 
+    // WebSocketでメッセージを受け取ったとき
     this.ws.addEventListener('message', (message) => {
       console.log(message);
       //TODO: MessageModelに値を追加する
