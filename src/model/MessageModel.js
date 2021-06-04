@@ -1,6 +1,7 @@
 export const MessageModel = class {
-  constructor(messages = []) {
-    this.mesagges = [];
+  constructor({ ws, messages = [] }) {
+    this.mesagges = messages;
+    this.ws = ws;
   }
 
   /**
@@ -10,6 +11,8 @@ export const MessageModel = class {
    */
   addMessage = ({ body, option, from, isBroad, to }) => {
     this.mesagges.push({ body, option, from, isBroad, to });
-    console.log(this.mesagges);
+    //TODO: toがあればws.sendする
+    //TODO: viewからelement取得する
+    //TODO: 描画する(render)
   };
 };

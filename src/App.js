@@ -5,7 +5,7 @@ export const App = class {
     this.jsForm = jsForm;
     this.jsMessages = jsMessages;
     this.ws = new WebSocket(wsURL);
-    this.messageModel = new MessageModel();
+    this.messageModel = new MessageModel(this.ws);
   }
 
   // イベントリスナーの登録
