@@ -1,4 +1,3 @@
-import { MessageView } from '../view/MessageView.js';
 export const MessageModel = class {
   constructor(mesagges = []) {
     this.mesagges = mesagges;
