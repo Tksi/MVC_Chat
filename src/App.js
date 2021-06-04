@@ -14,16 +14,20 @@ export const App = class {
     this.jsForm.addEventListener('submit', (e) => {
       e.preventDefault();
       console.log(e.srcElement.input.value);
-      //TODO: MessagaModelに値を追加する
-      // this.messageModel.addMessage();
+      // messagaModelに値を追加する
+      this.messageModel.addMessage({
+        body: e.srcElement.input.value,
+        to: '*',
+      });
       e.srcElement.input.value = '';
     });
 
     // WebSocketでメッセージを受け取ったとき
     this.ws.addEventListener('message', (message) => {
-      console.log(message);
-      //TODO: MessageModelに値を追加する
-      // this.messageModel.addMessage();
+      const data = JSON.parse(message.data);
+      console.log(data);
+      // messagaModelに値を追加する;
+      this.messageModel.addMessage(data);
     });
   }
 };
