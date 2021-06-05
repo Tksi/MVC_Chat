@@ -6,6 +6,7 @@ export const MessageView = class {
    * @returns {string} HTML文字列
    */
   createElement(messages) {
+    console.log(messages);
     return messages
       .map((message) => {
         // 送信メッセージ
@@ -18,12 +19,12 @@ export const MessageView = class {
           // サーバからのメッセージ
           if (message.from === 'server') {
             // 接続情報のとき
-            if (message.option.split(' ')[1] === 'Connected') {
-              return `<div class='message message-connect'>${message.option}</div>`;
+            if (message.body.split(' ')[1] === 'Connected') {
+              return `<div class='message message-connect'>${message.body}</div>`;
             }
             // 切断情報のとき
             else {
-              return `<div class='message message-disconnect'>${message.option}</div>`;
+              return `<div class='message message-disconnect'>${message.body}</div>`;
             }
           }
 
