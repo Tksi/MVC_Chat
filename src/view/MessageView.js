@@ -6,7 +6,6 @@ export const MessageView = class {
    * @returns {string} HTML文字列
    */
   createElement(messages) {
-    console.log(messages);
     return messages
       .map((message) => {
         // 送信メッセージ

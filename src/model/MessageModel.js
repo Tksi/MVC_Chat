@@ -1,7 +1,8 @@
 export const MessageModel = class {
+  #_onChange = () => {};
+
   constructor(mesagges = []) {
     this.mesagges = mesagges;
-    this._onChange = () => {};
   }
 
   /**
@@ -11,7 +12,7 @@ export const MessageModel = class {
    */
   addMessage = ({ body, option = '', from = '', isBroad = false, to = '' }) => {
     this.mesagges.push({ body, option, from, isBroad, to });
-    this._onChange({ body, option, from, isBroad, to });
+    this.#_onChange({ body, option, from, isBroad, to });
   };
 
   /**
@@ -20,6 +21,6 @@ export const MessageModel = class {
    * @param {function} func　実行される関数、引数で追加されたmessageを受け取る
    */
   onChange = (func) => {
-    this._onChange = func;
+    this.#_onChange = func;
   };
 };
